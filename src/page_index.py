@@ -1,20 +1,9 @@
-def get(): return """<!DOCTYPE html>
-<html>
-<head>
-    <title>Home Page</title>
-    <style>
-        body {
-        background-color: #89c0e0; 
-        }
+import os.path
+import mako.template 
+import random
 
-        .topbar {
-            background: Blue;
-            color: white;
-        }
-
-    </style>
-</head>
-<body>
-    <div class="topbar" align="right">Hello, NAME</div>
-</body>
-</html>"""
+def get():
+    d = os.path.dirname( __file__ )
+    t = mako.template.Template(
+            filename=f"{d}/index.html")
+    return t.render(isLoggedIn=random.choice([True,False]))

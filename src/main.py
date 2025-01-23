@@ -1,16 +1,23 @@
 import cherrypy
 import os.path
+import mako.template
+import mako.lookup
+import random
+#import page_index
+#import page_signup
+#import page_posts
+#import page_test
 
-#we have modules for each page we're displaying 
-import page_index
-import page_signup
-import page_posts
-import page_test
+PYPATH = os.path.dirname(__file__)
+lookup = mako.lookup.TemplateLookup(
+    directories=[os.path.dirname(__file__)])
 
 class App:
     @cherrypy.expose
     def index(self):
-        return page_index.get()
+        n = random.choice(names.name)
+        t = lookup.get_template("page_index.html")
+        return t.render(name=n)
     @cherrypy.expose
     def signup(self):
         return page_signup.get()
