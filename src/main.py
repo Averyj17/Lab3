@@ -1,12 +1,14 @@
 import cherrypy
 import os.path
+import datetime
 import mako.template
 import mako.lookup
 import random
-#import page_index
-#import page_signup
-#import page_posts
-#import page_test
+import names
+import pictures
+
+
+import page_test
 
 PYPATH = os.path.dirname(__file__)
 lookup = mako.lookup.TemplateLookup(
@@ -16,14 +18,17 @@ class App:
     @cherrypy.expose
     def index(self):
         n = random.choice(names.name)
-        t = lookup.get_template("page_index.html")
+        t = lookup.get_template("index.html")
         return t.render(name=n)
     @cherrypy.expose
     def signup(self):
-        return page_signup.get()
+        t = lookup.get_template("signup.html")
+        return t.render()
     @cherrypy.expose
     def posts(self):
-        return page_posts.get()
+        p = random.choice(pictures.image)
+        t = lookup.get_template("posts.html")
+        return t.render(pic=p)
     @cherrypy.expose
     def test(self):
         return page_test.get()

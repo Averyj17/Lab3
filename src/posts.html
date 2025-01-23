@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>posts</title>
+    <style>
+    body {
+        background-color: #89c0e0; 
+    }
+    .heading{
+        color: Blue;
+    }
+
+    .postbox{
+        border: 2px double black;
+        background: #bbe7f0;
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        margin: auto;
+        width: 40vw;
+        height: 40vh;
+        overflow: auto;
+        z-index: 10;
+        }
+
+        .pic{
+            border: 2px double blue;
+            width: 64px;
+            height: 64px;
+            margin: 0px 10px;
+        }
+
+        hr {
+            height: 3px;
+            background-color: black;
+            border: none;
+            margin: 0;
+            padding: 0;
+        }
+
+        .even{
+            background: #6999b5;
+            margin: 0;
+            padding: 0;
+            z-index: 3;
+        }
+        
+        .odd{
+            background: #ede8cc;
+            margin: 0;
+            padding: 0;
+            z-index: 3;
+        }
+
+    </style>
+</head>
+<body>
+    <h1 class="heading" align="center">Posts</h1>
+
+    <div class="postbox">
+
+        %for i in range(5):
+            <div class="even">
+                <img src="/html/logo.png" class="pic">
+                <span>&emsp; Hello!<span>
+                <span>&emsp;&emsp; 3 days ago &emsp;&emsp; 10 views </span>
+                <hr>
+            </div>
+            <div class="odd">
+                <img src="/html/logo.png" class="pic">
+                <span>&emsp; Hello!<span>
+                <span>&emsp;&emsp; 3 days ago &emsp;&emsp; 10 views </span>
+                <hr>
+            </div>
+        % endfor
+    </div>
+</body>
+</html>
