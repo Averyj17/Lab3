@@ -41,14 +41,14 @@
         }
 
         .even{
-            background: #6999b5;
+            background: #ede8cc;
             margin: 0;
             padding: 0;
             z-index: 3;
         }
-        
+
         .odd{
-            background: #ede8cc;
+            background: #6999b5;
             margin: 0;
             padding: 0;
             z-index: 3;
@@ -61,20 +61,22 @@
 
     <div class="postbox">
 
-        %for i in range(5):
-            <div class="even">
-                <img src="/html/logo.png" class="pic">
-                <span>&emsp; Hello!<span>
-                <span>&emsp;&emsp; 3 days ago &emsp;&emsp; 10 views </span>
-                <hr>
-            </div>
-            <div class="odd">
-                <img src="/html/logo.png" class="pic">
-                <span>&emsp; Hello!<span>
-                <span>&emsp;&emsp; 3 days ago &emsp;&emsp; 10 views </span>
-                <hr>
-            </div>
-        % endfor
+        %for i in range(10):
+            %if (i%2==0):
+                <div class="even">
+                    <img src="/html/logo.png" class="pic">
+                    <span>&emsp; Hello!<span>
+                    <span>&emsp;&emsp; ${d[i]} days ${hour[i]} hours and ${mins[i]} minutes ago &emsp;&emsp; ${v[i]} views </span>
+                    <hr>
+                </div>
+                <div class="odd">
+                    <img src="/html/logo.png" class="pic">
+                    <span>&emsp; Hello!<span>
+                    <span>&emsp;&emsp; ${d[i+1]} days ${hour[i+1]} hours and ${mins[i+1]} minutes ago &emsp;&emsp; ${v[i+1]} views </span>
+                    <hr>
+                </div>
+            %endif
+        %endfor
     </div>
 </body>
 </html>

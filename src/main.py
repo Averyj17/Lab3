@@ -26,9 +26,27 @@ class App:
         return t.render()
     @cherrypy.expose
     def posts(self):
-        p = random.choice(pictures.image)
+        days = []
+        hours = []
+        minutes = []
+        r_list = []
+        for i in range(10):
+            x = datetime.timedelta(minutes=random.randrange(8000))
+            day = x.days
+            hoursago = int( x.seconds / 3600 )
+            minutesago = round((x.seconds/60) - hoursago*60)
+
+            r_int = random.randint(1,1000000)
+
+            days.append(day)
+            hours.append(hoursago)
+            minutes.append(minutesago)
+
+            r_list.append(r_int)
+        
+
         t = lookup.get_template("posts.html")
-        return t.render(pic=p)
+        return t.render(hour=hours, mins=minutes, d = days, v= r_list)
     @cherrypy.expose
     def test(self):
         return page_test.get()
