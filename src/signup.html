@@ -46,19 +46,25 @@
     </style>
 </head>
 <body>
+    
     <div class="dialog">
         <div class="title">Sign Up Page</div>
         <span>Email: </span>
-        <input size=10></input><br><br>
+        <input id="email" size=10></input><br><br>
 
         <span>Name: </span>
-        <input size=10></input><br><br>
+        <input id="name" size=10></input><br><br>
 
         <span>Password: </span>
-        <input type=”password” size=10></input><br><br>
+        <input id="pass" type=”password” size=10></input><br><br>
 
         <span>Birthday: </span>
-        <input type=”date”></input><br><br>
-        <div class = "button">Sign Up</div>
+        <input id="bday" type=”date”></input><br><br>
+
+        <button onclick="check()">Sign Up</button>
+        <script src="/html/signup.js"></script>
     </div>
+    
+</body>
+
 </html>
