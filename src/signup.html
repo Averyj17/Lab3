@@ -43,11 +43,37 @@
             background: lightgrey;
             text-align: center;
         }
+
+        .alert {
+        position: fixed;
+        left: 0;
+        top: 0;
+        background: #ffcccc;
+        text-align: center;
+        width: 100%;
+        padding: 1em;
+        box-shadow: 0em 1em 1em rgba(0,0,0,0.5);
+        border-top: 2px solid red;
+        border-bottom: 2px solid red;
+        }
+
+        .welcome {
+        position: fixed;
+        left: 0;
+        top: 0;
+        background: #ccffcc;
+        text-align: center;
+        width: 100%;
+        padding: 1em;
+        box-shadow: 0em 1em 1em rgba(0,0,0,0.5);
+        border-top: 2px solid green;
+        border-bottom: 2px solid green;
+        }
     </style>
 </head>
 <body>
     
-    <div class="dialog">
+    <div class="dialog check">
         <div class="title">Sign Up Page</div>
         <span>Email: </span>
         <input id="email" size=10></input><br><br>

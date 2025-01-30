@@ -11,8 +11,7 @@ import pictures
 import page_test
 
 PYPATH = os.path.dirname(__file__)
-lookup = mako.lookup.TemplateLookup(
-    directories=[os.path.dirname(__file__)])
+lookup = mako.lookup.TemplateLookup(directories=[os.path.dirname(__file__)])
 
 class App:
     @cherrypy.expose
