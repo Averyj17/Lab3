@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>makepost</title>
+    <style>
+        body {
+        background-color: #89c0e0; 
+        }
+
+        div.dialog{
+            border: 2px double black;
+            background: #bbe7f0;
+            padding-top: 0em;
+            padding-left: 1em;
+            padding-right: 1em;
+            padding-bottom: 1em;
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            margin: auto;
+            width: 40vw;
+            height: 40vh;
+            overflow: auto;
+            box-shadow: 1em 1em 0.5em rgba(0,0,0,0.5);
+            z-index: 10;
+        }
+
+        .title{
+            font-weight: bold;
+            text-align: center;
+            margin-bottom: 1em;
+            background: blue;
+            color: white;
+            padding: 0.5em;
+        }
+
+        div.button{
+            border: 3px outset;
+            margin: 1em;
+            padding: 1em;
+            background: lightgrey;
+            text-align: center;
+        }
+
+        .alert {
+        position: fixed;
+        left: 0;
+        top: 0;
+        background: #ffcccc;
+        text-align: center;
+        width: 100%;
+        padding: 1em;
+        box-shadow: 0em 1em 1em rgba(0,0,0,0.5);
+        border-top: 2px solid red;
+        border-bottom: 2px solid red;
+        }
+
+
+        .welcome {
+        position: fixed;
+        left: 0;
+        top: 0;
+        background: #ccffcc;
+        text-align: center;
+        width: 100%;
+        padding: 1em;
+        box-shadow: 0em 1em 1em rgba(0,0,0,0.5);
+        border-top: 2px solid green;
+        border-bottom: 2px solid green;
+        }
+    </style>
+</head>
+<body>
+    
+    <div class="dialog check">
+
+        <div class="title">Make a Post!</div>
+
+        <span>Title: </span>
+        <input id="name" size=10></input><br><br>
+
+        <div class="fieldname">Profile Picture:</div>
+        <input id="profilepic" type="file" style="display:none" onchange="updatethumb()">
+
+        <div>
+        <label for="profilepic" class="filepicker">Click to Pick</label>
+        <img id="thumbnail" width="64" height="64">
+        </div><br><br>
+
+
+        <button onclick="submit()">Post My Post!</button>
+
+        <script src="/html/makepost.js"></script>
+    </div>
+    
+</body>
+
+</html>

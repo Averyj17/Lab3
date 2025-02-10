@@ -12,9 +12,47 @@
             color: white;
         }
 
+        .pic{
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            margin: auto;
+            width: 17vw;
+            height: 50vh;
+        }
+
+        .nam{
+            color: #b6ccd9;
+            font-size:xx-large;
+            text-align:center;
+            background-color:darkblue; 
+            border: 2px double #ebedef;
+            position: absolute;
+            margin-left:625px;
+            width: 20vh;
+            height: 5vh;
+        }
+
     </style>
 </head>
 <body>
-    <div class="topbar" align="right">Hello, ${name | h}</div>
+    <div class="topbar" align="right">Hello, ${name | h}</div><br><br><br><br><br><br><br>
+
+    <div class="nam">${title |h}</div>
+
+    %if picture == "question":
+        <div class="pic">
+        <img src="../html/${picture}${itype}" alt="Image" style="max-width: 250px;"/>
+        </div>
+    %endif
+
+    %if picture != "question":
+        <div class="pic">
+        <img src="data:image/${itype};base64,${picture}" alt="Image" style="max-width: 250px;"/>
+        </div>
+    %endif
+    
 </body>
 </html>
